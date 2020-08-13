@@ -18,23 +18,6 @@ const morganOption = (NODE_ENV === 'production')
   : 'common';
 
 /* -------------------------------------------------------- */
-/*                 Logging setup                            */
-/* -------------------------------------------------------- */
-/*const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.json(),
-  transports: [
-    new winston.transports.File({ filename: 'info.log' })
-  ]
-});
-
-if (NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
-}*/
-
-/* -------------------------------------------------------- */
 /*                 Express setup                            */
 /* -------------------------------------------------------- */
 const app = express()
@@ -55,7 +38,6 @@ app.use(function validateBearerToken(req, res, next) {
 app.use(morgan(morganOption))
 app.use(helmet())
 app.use(cors())
-/*app.use(express.json());*/
 
 //Set card router after validateBearerToken
 app.use(cardRouter)

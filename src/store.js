@@ -22,4 +22,4 @@ const lists = [{
 }
 ];
 
-  module.exports = { cards, lists }
+module.exports = { cards, lists }
